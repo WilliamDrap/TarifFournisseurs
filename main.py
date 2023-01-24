@@ -1,6 +1,8 @@
 from openpyxl import load_workbook, Workbook
 
-liste_onglets = ('AK98', 'WRO 300 H', 'ARTIS & EVOSYS', 'WFR300')
+liste_onglets = ('AK98', 'WRO 300 H', 'ARTIS & EVOSYS', 'WFR300', 'Pré-post traitement',
+                 'Réactifs TDE', 'Information pratique Filtres', 'CWP 800', 'CWP 111-114',
+                 'CWP 61-66', 'CWP 131-132 ou WRO ROHH')
 
 wb_export = Workbook()
 wb_export_sheet = wb_export.create_sheet(title='Catalogue')
@@ -17,8 +19,9 @@ if __name__ == '__main__':
             wb_export_sheet.cell(column=1, row=global_row, value=index_onglet)
             wb_export_sheet.cell(column=2, row=global_row, value=s.cell(column=1, row=start_row).value)
             wb_export_sheet.cell(column=3, row=global_row, value=s.cell(column=2, row=start_row).value)
-            wb_export_sheet.cell(column=4, row=global_row, value=s.cell(column=5, row=start_row).value)
-            wb_export_sheet.cell(column=5, row=global_row, value=s.cell(column=6, row=start_row).value)
+            wb_export_sheet.cell(column=4, row=global_row, value=s.cell(column=4, row=start_row).value)
+            wb_export_sheet.cell(column=5, row=global_row, value=s.cell(column=5, row=start_row).value)
+            wb_export_sheet.cell(column=6, row=global_row, value=s.cell(column=6, row=start_row).value)
             start_row += 1
             global_row += 1
 
